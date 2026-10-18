@@ -3,7 +3,7 @@
 <a href="https://nikeshh.com">
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/engineering-banner.png" />
-  <img src="./assets/engineering-banner.gif" width="1200" alt="Nikeshh Vijayabaskaran — AI engineer. Intelligence, engineered. Animated signals connect context, retrieval, reasoning, tools, and evaluation." />
+  <img src="./assets/engineering-banner.gif" width="1200" alt="Nikeshh Vijayabaskaran — Building calm, reliable intelligence. Dot-matrix typography and a pixel avatar over the animated violet backdrop from nikeshh.com." />
 </picture>
 </a>
 
@@ -17,15 +17,13 @@
 
 <br />
 
-## Good AI needs more than a model.
-
-It needs useful context, deliberate interfaces, dependable tools, and a way to know when it's wrong.
+## Building systems people can rely on.
 
 I'm **Nikeshh Vijayabaskaran**. I build assistants, retrieval systems, and agentic workflows, connecting the intelligence layer to the product and infrastructure around it. My background spans **RBC and Temenos**, from banking applications and distributed services to cloud platforms and AI engineering.
 
 The aim is simple: **calm, reliable products that people can use and teams can operate.**
 
-## Four layers. One product.
+## Focus
 
 | | What I work on | What matters |
 | :--- | :--- | :--- |
@@ -34,7 +32,7 @@ The aim is simple: **calm, reliable products that people can use and teams can o
 | **03 / Infrastructure** | Cloud platforms, event pipelines, model deployment | Predictable latency, resilience, cost |
 | **04 / Confidence** | Evaluations, tracing, observability, runbooks | Measurable quality, visible failures, clear ownership |
 
-## The engineering behind the experience
+## How I work
 
 **Define the promise → Ship a complete slice → Measure → Improve**
 

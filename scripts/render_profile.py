@@ -1,96 +1,94 @@
-"""Render the profile banner. Requires Pillow and macOS supplemental fonts."""
+"""Render a README banner from the portfolio's actual visual assets.
+
+Requires Pillow, fonttools[woff], and imageio-ffmpeg. Run with --site-dir pointing
+at the nikeshh.com checkout; --inter-font can point at a local Inter TTF.
+"""
+import argparse
 from pathlib import Path
 import math
-from PIL import Image, ImageDraw, ImageFont
+import subprocess
+import tempfile
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from fontTools.ttLib import TTFont
+import imageio_ffmpeg
 
-ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'assets'
-W, H = 1200, 540
-BG = '#080e1c'
-MUTED = '#8b9ab5'
-CYAN = '#65d8ed'
-WHITE = '#edf4ff'
-FONT = Path('/System/Library/Fonts/Supplemental')
-def font(size, bold=False, mono=False):
-    name = 'Courier New.ttf' if mono else ('Arial Bold.ttf' if bold else 'Arial.ttf')
-    return ImageFont.truetype(str(FONT / name), size)
+parser = argparse.ArgumentParser()
+parser.add_argument('--site-dir', required=True, type=Path)
+parser.add_argument('--inter-font', type=Path, default=Path('/System/Library/Fonts/Supplemental/Arial.ttf'))
+args = parser.parse_args()
+OUT = Path(__file__).resolve().parents[1] / 'assets'
+W, H = 1200, 600
 
-def text(d, xy, value, size, color=WHITE, bold=False, mono=False):
-    d.text(xy, value, font=font(size, bold, mono), fill=color)
-
-def center(d, x, y, value, size, color=WHITE, mono=False):
-    f = font(size, mono=mono)
-    d.text((x, y), value, font=f, fill=color, anchor='mm')
-
-base = Image.new('RGB', (W, H), BG)
-d = ImageDraw.Draw(base)
-for x in range(24, W, 28):
-    for y in range(24, H, 28):
-        d.point((x, y), fill='#1b2940')
-d.rounded_rectangle((1, 1, W-2, H-2), radius=24, outline='#25314a', width=2)
-text(d, (48, 32), 'N / V', 20, CYAN, mono=True)
-text(d, (152, 34), 'AI ENGINEERING  /  PRODUCT  /  PLATFORMS', 15, MUTED, mono=True)
-text(d, (48, 88), 'Nikeshh', 60, bold=True)
-text(d, (48, 151), 'Vijayabaskaran', 60, bold=True)
-text(d, (50, 236), 'Intelligence, engineered.', 26, CYAN)
-text(d, (50, 280), 'Assistants. Retrieval. Agentic workflows.', 19, MUTED)
-text(d, (50, 310), 'From the first interface to the last mile of production.', 17, MUTED)
-# A neural circuit: connected, concentric pathways with a stable central mark.
-cx, cy = 963, 195
-for radius in (66, 105, 146):
-    d.ellipse((cx-radius, cy-radius, cx+radius, cy+radius), outline='#243750', width=1)
-nodes=[]
-for k in range(12):
-    a = 2*math.pi*k/12
-    r = 146 if k%2==0 else 105
-    nodes.append((cx+math.cos(a)*r, cy+math.sin(a)*r))
-for k, p in enumerate(nodes):
-    q=nodes[(k+4)%12]
-    d.line((p,q), fill='#203650', width=1)
-    d.line((p,(cx,cy)), fill='#1d3047', width=1)
-    d.ellipse((p[0]-4,p[1]-4,p[0]+4,p[1]+4), fill='#42657f')
-d.rounded_rectangle((cx-44,cy-35,cx+44,cy+35),radius=16,fill='#0e2031',outline='#38677c',width=2)
-center(d,cx,cy,'AI',30,CYAN,mono=True)
-# Process diagram is illustrative, not a claim of live telemetry.
-d.rounded_rectangle((32, 380, 1168, 510), radius=16, fill='#0d1627', outline='#26364e')
-text(d,(52,394),'HOW I THINK ABOUT SYSTEMS',13,MUTED,mono=True)
-labels=['CONTEXT','RETRIEVAL','REASONING','TOOLS','EVALUATION']
-xs=[150,375,600,825,1050]
-for i,x in enumerate(xs):
-    if i<4: d.line((x+80,458,xs[i+1]-80,458),fill='#334961',width=2)
-    d.rounded_rectangle((x-80,435,x+80,481),radius=9,fill='#111f32',outline='#334961')
-    center(d,x,458,labels[i],15,WHITE,mono=True)
-
-frames=[]
-for frame in range(96):
-    im=base.copy(); d=ImageDraw.Draw(im)
-    t=frame/96
-    # Orbiting signals and quiet neural connections.
-    for orbit,r in enumerate((66,105,146)):
-        a=2*math.pi*(t+orbit/3)*(1 if orbit!=1 else -1)
-        p=(cx+math.cos(a)*r, cy+math.sin(a)*r)
-        for rad,col in ((10,'#12344b'),(6,'#27778b'),(3,CYAN)):
-            d.ellipse((p[0]-rad,p[1]-rad,p[0]+rad,p[1]+rad),fill=col)
-    active=int(t*12)%12
-    p=nodes[active]
-    d.line((p,(cx,cy)),fill='#3c9bb1',width=2)
-    d.ellipse((p[0]-4,p[1]-4,p[0]+4,p[1]+4),fill=CYAN)
-    d.rounded_rectangle((cx-44,cy-35,cx+44,cy+35),radius=16,fill='#0e2031',outline='#38677c',width=2)
-    center(d,cx,cy,'AI',30,CYAN,mono=True)
-    # Route packets along the system, with a subtle active-stage indicator.
-    step=t*5
-    idx=int(step)%5
-    x=xs[idx]
-    d.rounded_rectangle((x-80,435,x+80,481),radius=9,outline=CYAN,width=2)
-    center(d,x,458,labels[idx],15,CYAN,mono=True)
-    for j in range(4):
-        q=(t*2+j/4)%1
-        px=xs[j]+83+q*(xs[j+1]-xs[j]-166)
-        d.ellipse((px-3,455,px+3,461),fill=CYAN)
-    frames.append(im)
-# Fixed palette avoids color fluctuations between frames.
-palette=base.quantize(colors=96)
-frames=[im.quantize(palette=palette,dither=Image.Dither.NONE) for im in frames]
-frames[0].convert('RGB').save(OUT/'engineering-banner.png')
-frames[0].save(OUT/'engineering-banner.gif', save_all=True, append_images=frames[1:], duration=80, loop=0, optimize=True, disposal=1)
-print(f"Rendered {len(frames)} frames; GIF {(OUT/'engineering-banner.gif').stat().st_size/1024:.0f} KB")
+with tempfile.TemporaryDirectory() as folder:
+    temp = Path(folder)
+    font = TTFont(args.site_dir / 'public/fonts/GeistPixel-Circle.woff2')
+    font.flavor = None
+    font.save(temp / 'display.ttf')
+    display = ImageFont.truetype(str(temp / 'display.ttf'), 64)
+    brand = ImageFont.truetype(str(temp / 'display.ttf'), 26)
+    body = ImageFont.truetype(str(args.inter_font), 22)
+    small = ImageFont.truetype(str(args.inter_font), 17)
+    label = ImageFont.truetype(str(args.inter_font), 18)
+    subprocess.run([
+        imageio_ffmpeg.get_ffmpeg_exe(), '-hide_banner', '-loglevel', 'error',
+        '-i', str(args.site_dir / 'public/assets/hero-bg.mp4'),
+        '-vf', 'fps=12,scale=1200:675,crop=1200:600',
+        '-frames:v', '96', str(temp / '%03d.png'),
+    ], check=True)
+    backgrounds = [Image.open(p).convert('RGB').filter(ImageFilter.GaussianBlur(1.2)) for p in sorted(temp.glob('*.png'))]
+    overlay = Image.new('RGBA', (W,H))
+    d = ImageDraw.Draw(overlay)
+    # Stable typography over the moving website backdrop.
+    d.text((40,30), 'Nikeshh', font=brand, fill='#ffffff')
+    d.text((1160,37), 'AI engineer / Product builder', font=small, fill='#c8c8c8', anchor='ra')
+    d.rounded_rectangle((493,108,707,148), radius=20, fill='#28282a', outline='#686868')
+    d.ellipse((512,125,518,131),fill='#d8d8d8')
+    d.text((609,127),'Intelligent systems',font=small,fill='#dedede',anchor='mm')
+    first = 'Building calm,'
+    text_width = d.textlength(first,font=display)
+    group_width = text_width + 76
+    start = (W-group_width)/2
+    avatar = Image.open(args.site_dir/'public/assets/pixel-avatar.png').convert('RGBA')
+    avatar.thumbnail((64,88),Image.Resampling.LANCZOS)
+    overlay.alpha_composite(avatar,(int(start),178))
+    d.text((start+76,190),first,font=display,fill='#ffffff',anchor='lt')
+    d.text((W/2,292),'reliable intelligence',font=display,fill='#ffffff',anchor='mm')
+    d.text((W/2,365),'Assistants, retrieval, and agentic workflows.',font=body,fill='#d4d4d4',anchor='mm')
+    d.text((W/2,399),'Designed for people. Engineered for production.',font=body,fill='#bcbcbc',anchor='mm')
+    # Match the site's monochrome CTA, with a soft and stable halo.
+    halo=Image.new('RGBA',(W,H))
+    hd=ImageDraw.Draw(halo)
+    hd.rounded_rectangle((494,443,706,496),radius=27,fill=(255,255,255,52))
+    halo=halo.filter(ImageFilter.GaussianBlur(18))
+    overlay=Image.alpha_composite(halo,overlay)
+    d=ImageDraw.Draw(overlay)
+    d.rounded_rectangle((493,442,707,497),radius=28,fill='#141414',outline='#747474',width=1)
+    d.text((588,469),'Explore nikeshh.com',font=label,fill='#eeeeee',anchor='mm')
+    d.line((682,474,690,466),fill='#eeeeee',width=1)
+    d.line((682,466,690,466,690,474),fill='#eeeeee',width=1)
+    d.text((W/2,560),'Nikeshh Vijayabaskaran',font=small,fill='#969696',anchor='mm')
+    scrim=Image.new('RGBA',(W,H))
+    sd=ImageDraw.Draw(scrim)
+    for y in range(H):
+        opacity = int(255*(0.28+0.36*abs(y-H/2)/(H/2)))
+        sd.line((0,y,W,y),fill=(0,0,0,opacity))
+    frames=[]
+    for i in range(96):
+        # Cosine timing makes the ambient forward/backward loop seamless.
+        index=round((1-math.cos(2*math.pi*i/96))/2*(len(backgrounds)-1))
+        im=backgrounds[index].convert('RGBA')
+        im=Image.alpha_composite(im,scrim)
+        im=Image.alpha_composite(im,overlay).convert('RGB')
+        if i==0: im.save(OUT/'engineering-banner.png')
+        frames.append(im.resize((840,420),Image.Resampling.LANCZOS))
+    # Shared palette keeps the background and text consistent between frames.
+    sample=Image.new('RGB',(840,420*8))
+    for j in range(8):sample.paste(frames[j*12],(0,j*420))
+    background_palette=sample.quantize(colors=224).getpalette()[:224*3]
+    avatar_palette=avatar.convert('RGB').quantize(colors=16).getpalette()[:16*3]
+    grays=[value for i in range(16) for value in (i*17,)*3]
+    palette=Image.new('P',(1,1))
+    palette.putpalette(background_palette+avatar_palette+grays)
+    indexed=[im.quantize(palette=palette,dither=Image.Dither.NONE) for im in frames]
+    indexed[0].save(OUT/'engineering-banner.gif',save_all=True,append_images=indexed[1:],duration=80,loop=0,optimize=True,disposal=1)
+print(f"Rendered 96 frames; {(OUT/'engineering-banner.gif').stat().st_size/1024/1024:.2f} MB")
