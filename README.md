@@ -1,105 +1,73 @@
 <div align="center">
 
-<img src="./assets/banner.png" width="100%" alt="Abstract illustration of AI, connected systems, and a digital world" />
+<a href="https://nikeshh.com">
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/engineering-banner.png" />
+  <img src="./assets/engineering-banner.gif" width="1200" alt="Nikeshh Vijayabaskaran — AI engineer. Intelligence, engineered. Animated signals connect context, retrieval, reasoning, tools, and evaluation." />
+</picture>
+</a>
 
-# Nikeshh Vijayabaskaran
+<br />
 
-**AI Engineer · Full-Stack Builder · Platform Engineer**
+**AI Engineer &nbsp; / &nbsp; Full-Stack Builder &nbsp; / &nbsp; Platform Engineer**
 
-### Intelligent systems. Thoughtful products. Built for production.
-
-I build assistants, retrieval systems, and agentic workflows that connect intelligence to real products and operations.
-
-[**Website ↗**](https://nikeshh.com) &nbsp; / &nbsp; [**LinkedIn ↗**](https://www.linkedin.com/in/nikeshh/) &nbsp; / &nbsp; [**X ↗**](https://x.com/NikeshhV) &nbsp; / &nbsp; [**Email ↗**](mailto:hello@nikeshh.com)
+[**Website ↗**](https://nikeshh.com) &nbsp;&nbsp; [**LinkedIn ↗**](https://www.linkedin.com/in/nikeshh/) &nbsp;&nbsp; [**X ↗**](https://x.com/NikeshhV) &nbsp;&nbsp; [**Say hello ↗**](mailto:hello@nikeshh.com)
 
 </div>
 
----
+<br />
 
-## From intelligence to something useful
+## Good AI needs more than a model.
 
-My work sits at the intersection of **AI engineering, product development, and reliable infrastructure**. I work across the full system: the interface people use, the services behind it, the data it depends on, and the signals that tell us whether it works.
+It needs useful context, deliberate interfaces, dependable tools, and a way to know when it's wrong.
 
-My background spans **RBC and Temenos**, building banking products, distributed services, and cloud platforms. That experience shapes how I approach AI: clear contracts, grounded answers, measurable quality, and predictable behavior when something goes wrong.
+I'm **Nikeshh Vijayabaskaran**. I build assistants, retrieval systems, and agentic workflows, connecting the intelligence layer to the product and infrastructure around it. My background spans **RBC and Temenos**, from banking applications and distributed services to cloud platforms and AI engineering.
 
-## What I build
+The aim is simple: **calm, reliable products that people can use and teams can operate.**
 
-<table>
-<tr>
-<td width="50%" valign="top">
+## Four layers. One product.
 
-### Assistants & agentic workflows
+| | What I work on | What matters |
+| :--- | :--- | :--- |
+| **01 / Intelligence** | LLM systems, retrieval, agents, tool integration | Grounded answers, useful context, clear boundaries |
+| **02 / Experience** | Full-stack products, AI interfaces, APIs | Coherent workflows, thoughtful UX, responsive feedback |
+| **03 / Infrastructure** | Cloud platforms, event pipelines, model deployment | Predictable latency, resilience, cost |
+| **04 / Confidence** | Evaluations, tracing, observability, runbooks | Measurable quality, visible failures, clear ownership |
 
-Tools that work with business systems, carry context across steps, and hand decisions back to people when judgment matters.
+## The engineering behind the experience
 
-**Tool design · Integrations · Workflow orchestration**
+**Define the promise → Ship a complete slice → Measure → Improve**
 
-</td>
-<td width="50%" valign="top">
+- **Context before complexity.** Start with the user's problem and the constraints of the system.
+- **Explicit boundaries.** Give models and tools clear contracts, permissions, budgets, and fallbacks.
+- **Evidence over intuition.** Use evaluations and production feedback to improve quality, latency, and cost.
+- **Ownership after launch.** Build in the documentation, observability, and operational clarity a team needs.
 
-### Retrieval & knowledge systems
+<details>
+<summary><b>Open the toolbox</b> — languages, data, cloud & operations</summary>
 
-Search and answer experiences over documents and structured data, with attention to relevance, citations, and freshness.
+<br />
 
-**RAG · Embeddings · Hybrid search · Reranking**
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### Full-stack products
-
-Coherent experiences from interface to infrastructure: thoughtful UX, typed APIs, data models, and the services that connect them.
-
-**React · Next.js · TypeScript · Python · Node.js**
-
-</td>
-<td width="50%" valign="top">
-
-### Platforms that teams can operate
-
-Cloud services, event pipelines, and deployment foundations with observability and clear ownership built into the design.
-
-**Kubernetes · Cloud · Streaming · Infrastructure as code**
-
-</td>
-</tr>
-</table>
-
-## Engineering principles
-
-- **Start with the user promise.** Define what the product must do, where it can fail, and what success looks like.
-- **Make quality observable.** Use evaluations, tracing, and production feedback to guide improvements.
-- **Design the boundaries.** Give models and tools explicit contracts, permissions, time budgets, and fallbacks.
-- **Ship a working slice.** Prove the complete path early, then improve quality, latency, and cost with evidence.
-- **Build for ownership.** Clear interfaces, documentation, and runbooks help teams operate what they ship.
-
-## Experience
-
-| Organization | Focus |
+| Layer | Tools & practices |
 | :--- | :--- |
-| **RBC** | AI and full-stack engineering for banking products; LLM and retrieval systems, product architecture, and technical leadership. |
-| **Temenos** | Banking microservices, cloud infrastructure, event streaming, observability, and engineering mentorship. |
+| **AI** | LLM integration · RAG · Agents & tools · Evaluations · Model deployment |
+| **Product** | TypeScript · Python · React · Next.js · Node.js · Java · Spring Boot · Vue · Angular |
+| **Data** | PostgreSQL · MongoDB · Redis · Kafka · RabbitMQ |
+| **Infrastructure** | Docker · Kubernetes · AWS · GCP · Azure · Terraform · Helm · Jenkins |
+| **Observability** | Prometheus · Grafana · OpenTelemetry · Tracing · CI/CD |
 
-## Tools I work with
+</details>
 
-| Layer | Technologies & practices |
-| :--- | :--- |
-| **AI systems** | LLM integration, RAG, agents and tools, evaluations, model deployment, observability |
-| **Product & services** | TypeScript, Python, React, Next.js, Node.js, Java, Spring Boot, Vue, Angular |
-| **Data & messaging** | PostgreSQL, MongoDB, Redis, Kafka, RabbitMQ |
-| **Cloud & delivery** | Docker, Kubernetes, AWS, GCP, Azure, Terraform, Helm, Jenkins |
-| **Operations** | Prometheus, Grafana, OpenTelemetry, tracing, CI/CD |
+<br />
 
 ---
 
 <div align="center">
 
-### Have a product or a system worth building?
+### A clear problem is a good place to start.
 
-Let's turn a clear problem into something people can rely on.
+Building an AI product, connecting a knowledge layer, or making a platform more dependable?
 
-[**Explore nikeshh.com ↗**](https://nikeshh.com) &nbsp; · &nbsp; [**Get in touch ↗**](mailto:hello@nikeshh.com)
+[**Let's talk ↗**](mailto:hello@nikeshh.com) &nbsp; · &nbsp; [**nikeshh.com ↗**](https://nikeshh.com)
 
 </div>
