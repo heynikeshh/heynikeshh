@@ -11,7 +11,7 @@
 
 **AI Engineer &nbsp; / &nbsp; Full-Stack Builder &nbsp; / &nbsp; Platform Engineer**
 
-[**Website ↗**](https://nikeshh.com) &nbsp;&nbsp; [**LinkedIn ↗**](https://www.linkedin.com/in/nikeshh/) &nbsp;&nbsp; [**X ↗**](https://x.com/NikeshhV) &nbsp;&nbsp; [**Say hello ↗**](mailto:hello@nikeshh.com)
+[**Website ↗**](https://nikeshh.com) &nbsp;&nbsp; [**LinkedIn ↗**](https://www.linkedin.com/in/nikeshh/) &nbsp;&nbsp; [**X ↗**](https://x.com/NikeshhV) &nbsp;&nbsp; [**Say hello ↗**](https://nikeshh.com/?contact=1)
 
 </div>
 
@@ -66,6 +66,6 @@ The aim is simple: **calm, reliable products that people can use and teams can o
 
 Building an AI product, connecting a knowledge layer, or making a platform more dependable?
 
-[**Let's talk ↗**](mailto:hello@nikeshh.com) &nbsp; · &nbsp; [**nikeshh.com ↗**](https://nikeshh.com)
+[**Let's talk ↗**](https://nikeshh.com/?contact=1) &nbsp; · &nbsp; [**nikeshh.com ↗**](https://nikeshh.com)
 
 </div>
