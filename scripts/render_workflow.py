@@ -9,15 +9,54 @@ parser.add_argument('--body-font', default='/System/Library/Fonts/Supplemental/A
 parser.add_argument('--display-font', default='/System/Library/Fonts/Supplemental/Courier New.ttf')
 args=parser.parse_args()
 OUT=Path(__file__).resolve().parents[1]/'assets'
-W,H=960,560
+W,H=960,756
 WHITE='#eeeeee'; MUTED='#949494'; LINE='#434047'
 body=ImageFont.truetype(args.body_font,22)
 caption=ImageFont.truetype(args.body_font,16)
+principle_font=ImageFont.truetype(args.body_font,18)
 number=ImageFont.truetype(args.display_font,22)
 small=ImageFont.truetype(args.body_font,12)
-positions=[(16,16),(490,16),(16,290),(490,290)]
+positions=[(16,16),(490,16),(16,390),(490,390)]
 titles=['Define the promise','Ship a complete slice','Measure what matters','Improve with evidence']
-notes=['Users, constraints, acceptance criteria','Interface, services, data — connected','Quality, latency, cost','Feedback becomes the next iteration']
+principles=[
+    ('Context before complexity.', "Start with the user's problem and the constraints of the system."),
+    ('Explicit boundaries.', 'Give models and tools clear contracts, permissions, budgets, and fallbacks.'),
+    ('Evidence over intuition.', 'Use evaluations and production feedback to improve quality, latency, and cost.'),
+    ('Ownership after launch.', 'Build in the documentation, observability, and operational clarity a team needs.'),
+]
+
+def wrap_text(draw, text, font, width):
+    lines=[]
+    for word in text.split():
+        if not lines or draw.textlength(lines[-1]+' '+word,font=font)>width:
+            lines.append(word)
+        else:
+            lines[-1]+=' '+word
+    return lines
+
+def iteration_scene(progress):
+    # Draw one shared circle at 3x resolution: arrows and marker use its tangent.
+    scale=3; size=208; center=104; radius=82
+    scene=Image.new('RGBA',(size*scale,size*scale))
+    draw=ImageDraw.Draw(scene)
+    def point(angle):
+        return ((center+radius*math.cos(angle))*scale,(center+radius*math.sin(angle))*scale)
+    draw.ellipse(((center-radius)*scale,(center-radius)*scale,(center+radius)*scale,(center+radius)*scale),outline='#95869f',width=2*scale)
+    for angle in (-math.pi/5,4*math.pi/5):
+        tip=point(angle)
+        tangent=(-math.sin(angle),math.cos(angle))
+        normal=(math.cos(angle),math.sin(angle))
+        back=(tip[0]-tangent[0]*10*scale,tip[1]-tangent[1]*10*scale)
+        draw.polygon([tip,(back[0]+normal[0]*4*scale,back[1]+normal[1]*4*scale),(back[0]-normal[0]*4*scale,back[1]-normal[1]*4*scale)],fill='#d0c5d9')
+    for j in range(3):
+        xx=center-56+j*10; yy=center-33+j*8
+        draw.rounded_rectangle((xx*scale,yy*scale,(xx+90)*scale,(yy+52)*scale),radius=6*scale,fill='#17141a',outline='#49434f' if j<2 else '#a79caf',width=2*scale)
+        if j==2:
+            for offset,length in ((16,62),(28,38),(40,50)):
+                draw.line(((xx+12)*scale,(yy+offset)*scale,(xx+12+length)*scale,(yy+offset)*scale),fill='#aaa1b3' if offset==16 else LINE,width=2*scale)
+    px,py=point(-math.pi/2+2*math.pi*progress)
+    draw.ellipse((px-4*scale,py-4*scale,px+4*scale,py+4*scale),fill=WHITE)
+    return scene.resize((size,size),Image.Resampling.LANCZOS)
 
 def line(d, pts, fill=WHITE, width=2):
     d.line(pts,fill=fill,width=width,joint='curve')
@@ -25,7 +64,7 @@ def line(d, pts, fill=WHITE, width=2):
 def circle(d,x,y,r,fill,outline=None,width=1):
     d.ellipse((x-r,y-r,x+r,y+r),fill=fill,outline=outline,width=width)
 
-def icon(d,i,x,y,p,active):
+def icon(im,d,i,x,y,p,active):
     # Each scene is drawn explicitly, using the site's restrained line style.
     if i==0:
         d.rounded_rectangle((x-110,y-61,x+48,y+65),radius=10,outline=LINE,width=2)
@@ -67,19 +106,8 @@ def icon(d,i,x,y,p,active):
         d.rounded_rectangle((x+63,y+39,x+139,y+57),radius=8,fill='#29262e')
         d.text((x+101,y+48),'evaluate',font=small,fill='#dad6de',anchor='mm')
     else:
-        for j in range(3):
-            xx=x-94+j*26; yy=y-27+j*9
-            d.rounded_rectangle((xx,yy,xx+128,yy+72),radius=8,fill='#17141a',outline='#49434f' if j<2 else '#a79caf',width=2)
-            if j==2:
-                line(d,[(xx+18,yy+21),(xx+107,yy+21)],'#aaa1b3',2)
-                line(d,[(xx+18,yy+38),(xx+71,yy+38)],LINE,2)
-                line(d,[(xx+18,yy+53),(xx+89,yy+53)],LINE,2)
-        d.arc((x-153,y-65,x+153,y+66),205,340,fill='#8d8099',width=2)
-        d.arc((x-153,y-65,x+153,y+66),25,160,fill='#8d8099',width=2)
-        d.polygon([(x+141,y-39),(x+151,y-48),(x+153,y-33)],fill='#b1a5bd')
-        d.polygon([(x-142,y+41),(x-152,y+49),(x-154,y+34)],fill='#b1a5bd')
-        a=math.pi*2*(p if active else .75)
-        circle(d,x+math.cos(a)*153,y+5+math.sin(a)*60,4,WHITE)
+        scene=iteration_scene(p if active else 0)
+        im.paste(scene,(int(x-104),int(y-104)),scene)
 
 frames=[]
 for frame in range(120):
@@ -91,14 +119,17 @@ for frame in range(120):
     d=ImageDraw.Draw(im)
     t=frame/120*4; active=int(t); p=t-active
     for i,(x,y) in enumerate(positions):
-        d.rounded_rectangle((x,y,x+454,y+252),radius=18,fill='#101012',outline='#66606c' if active==i else '#2e2b32',width=1)
+        d.rounded_rectangle((x,y,x+454,y+350),radius=18,fill='#101012',outline='#66606c' if active==i else '#2e2b32',width=1)
         d.text((x+24,y+24),f'0{i+1}',font=number,fill='#c0b5c9')
         d.text((x+72,y+25),titles[i],font=body,fill=WHITE)
         if i==active:
             circle(d,x+426,y+35,3,WHITE)
-            line(d,[(x+24,y+235),(x+24+406*p,y+235)],'#bfb2cb',2)
-        icon(d,i,x+227,y+131,p,active==i)
-        d.text((x+227,y+214),notes[i],font=caption,fill=MUTED,anchor='mm')
+            line(d,[(x+24,y+333),(x+24+406*p,y+333)],'#bfb2cb',2)
+        icon(im,d,i,x+227,y+140,p,active==i)
+        heading,description=principles[i]
+        d.text((x+24,y+239),heading,font=principle_font,fill=WHITE,anchor='lt')
+        for row,text in enumerate(wrap_text(d,description,caption,406)):
+            d.text((x+24,y+269+row*21),text,font=caption,fill='#b2aeb5',anchor='lt')
     frames.append(im)
 frames[0].save(OUT/'workflow.png')
 # Constant palette keeps line art steady while the illustrations animate.

@@ -46,13 +46,8 @@ The aim is simple: **calm, reliable products that people can use and teams can o
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/workflow.png" />
-  <img src="./assets/workflow.gif" width="960" alt="Four illustrated steps: define the promise with users and constraints; ship a complete slice connecting interface, services, and data; measure quality, latency, and cost; use feedback to improve the next iteration." />
+  <img src="./assets/workflow.gif" width="960" alt="Four illustrated steps and principles. Define the promise: Context before complexity. Start with the user's problem and the constraints of the system. Ship a complete slice: Explicit boundaries. Give models and tools clear contracts, permissions, budgets, and fallbacks. Measure what matters: Evidence over intuition. Use evaluations and production feedback to improve quality, latency, and cost. Improve with evidence: Ownership after launch. Build in the documentation, observability, and operational clarity a team needs." />
 </picture>
-
-- **Context before complexity.** Start with the user's problem and the constraints of the system.
-- **Explicit boundaries.** Give models and tools clear contracts, permissions, budgets, and fallbacks.
-- **Evidence over intuition.** Use evaluations and production feedback to improve quality, latency, and cost.
-- **Ownership after launch.** Build in the documentation, observability, and operational clarity a team needs.
 
 <br />
 
