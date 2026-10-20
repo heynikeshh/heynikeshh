@@ -19,9 +19,37 @@
 
 ## Building systems people can rely on.
 
-I'm **Nikeshh Vijayabaskaran**. I build assistants, retrieval systems, and agentic workflows, connecting the intelligence layer to the product and infrastructure around it. My background spans **RBC and Temenos**, from banking applications and distributed services to cloud platforms and AI engineering.
+I'm **Nikeshh Vijayabaskaran**.
+
+I build AI products end to end: voice agents and receptionists that never miss a call, lead generation and sales systems that capture leads and close deals, and marketing, SEO, and AIO engines that grow your traffic and visibility.
+
+I also automate support, finance, HR, and operations, and keep it all auditable, compliant, and governed.
+
+Working across banking, healthcare, retail and ecommerce, education, real estate, manufacturing, logistics, hospitality, technology, and professional services taught me to care about the details: how a product feels, how reliably it runs, and how well a team can understand it.
 
 The aim is simple: **calm, reliable products that people can use and teams can operate.**
+
+## Services
+
+AI products and automation built around the way your business works.
+
+| | Service | What it includes |
+| :--- | :--- | :--- |
+| **01** | **AI receptionists & voice agents** | Call answering & routing · Calendar bookings & reminders · Human handoff & call summaries |
+| **02** | **Lead generation & qualification** | Website enquiry capture · Qualification questions · Meeting booking & lead routing |
+| **03** | **Sales & CRM automation** | Customer record updates · Follow-up sequences · Pipeline alerts & sales handoffs |
+| **04** | **Marketing automation** | Content & campaign drafts · Customer nurture journeys · Audience segmentation & review |
+| **05** | **Chatbots & customer support** | Knowledge-grounded answers · Ticket routing & escalation · Aftercare & customer check-ins |
+| **06** | **Financial automation** | Invoice & receipt capture · Payment reminders · Reconciliation preparation |
+| **07** | **Workflow automation** | App integrations & data entry · Scheduling & notifications · Approvals & exception handling |
+| **08** | **Business process automation** | Customer onboarding · Document & request processing · Department handoffs & tracking |
+| **09** | **HR automation** | Employee onboarding checklists · Policy & internal knowledge assistants · Leave requests & HR reminders |
+| **10** | **Job & field operations** | Job scheduling & dispatch support · Visit updates & work summaries · Aftercare follow-ups |
+| **11** | **Reporting & AI advisory** | Automation assessment & tool selection · Operational dashboards & reports · Evaluation, monitoring & improvement |
+| **12** | **SEO & AIO** | Technical SEO & structured data · AI search & content optimisation · Search visibility & discovery reporting |
+| **13** | **Growth hacking & traffic** | Acquisition & traffic experiments · Landing page & conversion testing · Funnel analytics & growth reporting |
+| **14** | **AI auditing & assurance** | Model, prompt & workflow reviews · Quality, safety & failure-mode evaluations · Traceability & audit trails |
+| **15** | **Compliance & AI governance** | Data handling & access controls · Human oversight & approval workflows · Policy documentation & compliance evidence |
 
 ## Focus
 
@@ -60,7 +88,7 @@ The aim is simple: **calm, reliable products that people can use and teams can o
 
 ### A clear problem is a good place to start.
 
-Building an AI product, connecting a knowledge layer, or making a platform more dependable?
+Building an AI product, automating operations, or improving your traffic and visibility?
 
 [**Let's talk ↗**](https://nikeshh.com/?contact=1) &nbsp; · &nbsp; [**nikeshh.com ↗**](https://nikeshh.com)
 
