@@ -17,21 +17,43 @@
 
 <br />
 
-## Building systems people can rely on.
+## Building calm, reliable intelligence.
 
 I'm **Nikeshh Vijayabaskaran**.
 
-I build AI products end to end: voice agents and receptionists that never miss a call, lead generation and sales systems that capture leads and close deals, and marketing, SEO, and AIO engines that grow your traffic and visibility.
+I build AI products that **answer calls**, **grow your business**, and **automate operations**, with **governance built in**.
 
-I also automate support, finance, HR, and operations, and keep it all auditable, compliant, and governed.
+<details>
+<summary>Answer calls</summary>
 
-Working across banking, healthcare, retail and ecommerce, education, real estate, manufacturing, logistics, hospitality, technology, and professional services taught me to care about the details: how a product feels, how reliably it runs, and how well a team can understand it.
+Voice agents and AI receptionists that answer enquiries, book appointments, and hand off to your team when needed.
 
-The aim is simple: **calm, reliable products that people can use and teams can operate.**
+</details>
+
+<details>
+<summary>Grow your business</summary>
+
+Lead generation, sales and CRM automation, marketing, SEO, AIO, and growth experiments that improve traffic, visibility, and conversions.
+
+</details>
+
+<details>
+<summary>Automate operations</summary>
+
+Connected workflows for customer support, finance, HR, and everyday operations, with clear approvals and human oversight.
+
+</details>
+
+<details>
+<summary>Governance built in</summary>
+
+AI audits, traceability, access controls, compliance evidence, and clear ownership, so your team can understand and govern what runs.
+
+</details>
 
 ## Services
 
-AI products and automation built around the way your business works.
+End-to-end AI products and automation for your business, with growth, search visibility, auditability, and governance built in.
 
 | | Service | What it includes |
 | :--- | :--- | :--- |
@@ -50,6 +72,25 @@ AI products and automation built around the way your business works.
 | **13** | **Growth hacking & traffic** | Acquisition & traffic experiments · Landing page & conversion testing · Funnel analytics & growth reporting |
 | **14** | **AI auditing & assurance** | Model, prompt & workflow reviews · Quality, safety & failure-mode evaluations · Traceability & audit trails |
 | **15** | **Compliance & AI governance** | Data handling & access controls · Human oversight & approval workflows · Policy documentation & compliance evidence |
+
+<details>
+<summary><strong>Built with <em>intention.</em> A letter from Nikeshh</strong></summary>
+
+To the people building something useful,
+
+I'm Nikeshh, an AI engineer and full-stack developer. I build assistants, retrieval systems, and workflows that make everyday work easier.
+
+Working across banking, healthcare, retail and ecommerce, education, real estate, manufacturing, logistics, hospitality, technology, and professional services taught me to care about the details: how a product feels, how reliably it runs, and how well a team can understand it.
+
+I start with the problem, build something complete, and learn from real use. Clear interfaces, thoughtful boundaries, and measurable quality matter to me as much as the technology underneath.
+
+If you're building an AI product or looking for a better way to run part of your business, I'd love to hear what you have in mind.
+
+Warmly,
+
+*Nikeshh*
+
+</details>
 
 ## Focus
 
