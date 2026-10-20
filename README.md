@@ -2,8 +2,8 @@
 
 <a href="https://nikeshh.com">
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/home-banner.png" />
-  <img src="./assets/home-banner.gif" width="1200" alt="Nikeshh Vijayabaskaran: Building calm, reliable intelligence. The current nikeshh.com Home design, with its pixel headline and avatar, enterprise trust marks, concise AI product intro, and white Get Started button over the original animated backdrop." />
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/home-banner.png?v=2" />
+  <img src="./assets/home-banner.gif?v=2" width="1200" alt="Nikeshh Vijayabaskaran: Building calm, reliable intelligence. The nikeshh.com pixel headline and avatar, enterprise trust marks, and concise AI product intro over the original animated backdrop." />
 </picture>
 </a>
 

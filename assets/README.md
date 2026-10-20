@@ -20,5 +20,6 @@ identifies its license as CC BY 4.0. The font binary is not redistributed here.
 Inter is licensed under the SIL Open Font License in the website checkout.
 Brand marks belong to their respective owners.
 
-The banner is a rendered image: navigation, callouts, and buttons link to the
-website through the surrounding README link.
+The banner omits website navigation and the CTA. Its logo rings use the same
+white interiors and image sizing as the website. The surrounding README link
+opens the website.

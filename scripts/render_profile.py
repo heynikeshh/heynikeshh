@@ -11,7 +11,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 from fontTools.ttLib import TTFont
 import imageio_ffmpeg
 
@@ -20,7 +20,7 @@ parser.add_argument('--site-dir', required=True, type=Path)
 parser.add_argument('--display-font', required=True, type=Path)
 args = parser.parse_args()
 OUT = Path(__file__).resolve().parents[1] / 'assets'
-W, H, COUNT = 1200, 675, 60
+W, H, COUNT = 1200, 600, 60
 
 with tempfile.TemporaryDirectory() as folder:
     temp = Path(folder)
@@ -57,10 +57,8 @@ function read(file) {
     font.flavor = None
     font.save(temp / 'inter.ttf')
     display = ImageFont.truetype(str(args.display_font), 64)
-    brand = ImageFont.truetype(str(args.display_font), 25)
     body = ImageFont.truetype(str(temp / 'inter.ttf'), 17)
     small = ImageFont.truetype(str(temp / 'inter.ttf'), 13)
-    nav = ImageFont.truetype(str(temp / 'inter.ttf'), 15)
     metric = ImageFont.truetype(str(args.display_font), 26)
     subprocess.run([
         imageio_ffmpeg.get_ffmpeg_exe(), '-hide_banner', '-loglevel', 'error',
@@ -71,44 +69,47 @@ function read(file) {
     backgrounds = [Image.open(p).convert('RGB') for p in sorted(temp.glob('[0-9]*.png'))]
     overlay = Image.new('RGBA', (W, H))
     d = ImageDraw.Draw(overlay)
-    d.text((32, 42), data['name'], font=brand, fill='white', anchor='lm')
-    d.rounded_rectangle((335, 20, 865, 70), radius=25, fill='white')
-    x = 367
-    for label, width in [('Home', 85), ('Services', 110), ('About', 91), ('My Apps', 111), ('Contact', 0)]:
-        d.text((x, 45), label, font=nav, fill='#c8c8c8' if label == 'My Apps' else '#2e2e2e', anchor='lm')
-        if label == 'Home': d.ellipse((x + 19, 60, x + 22, 63), fill='#383838')
-        x += width
-    d.text((1168, 45), "Let's Talk", font=nav, fill='#d4d0d6', anchor='rm')
-
     # Trust marks and overlapping pill match the Home panel.
-    count, size, step = len(data['trust']), 36, 26
+    count, size, step = len(data['trust']), 42, 26
     pill_width = 224
     total = (count - 1) * step + size + pill_width - 14
     x = int((W - total) / 2)
     for i, company in enumerate(data['trust']):
         mark = Image.open(temp / f'trust-{i}.png').convert('RGBA')
-        circle = Image.new('RGBA', (size, size), '#28282a')
+        circle = Image.new('RGBA', (size, size))
+        cd = ImageDraw.Draw(circle)
+        cd.ellipse((0, 0, size - 1, size - 1), fill='#28282a', outline='#747474')
+        inner_size = size - 8
+        inner = Image.new('RGBA', (inner_size, inner_size), 'white')
         if company.get('cover'):
-            mark = ImageOps.fit(mark, (size - 6, size - 6), method=Image.Resampling.LANCZOS)
+            cover_size = round(inner_size * 1.12)
+            mark = ImageOps.fit(mark, (cover_size, cover_size), method=Image.Resampling.LANCZOS)
         else:
-            mark.thumbnail((26 if company.get('wide') else 20, 20), Image.Resampling.LANCZOS)
-        circle.alpha_composite(mark, ((size - mark.width) // 2, (size - mark.height) // 2))
-        mask = Image.new('L', (size, size))
-        ImageDraw.Draw(mask).ellipse((0, 0, size - 1, size - 1), fill=255)
-        circle.putalpha(mask)
-        overlay.alpha_composite(circle, (x + i * step, 142))
-    pill_x = x + (count - 1) * step + size - 14
-    d.rounded_rectangle((pill_x, 142, pill_x + pill_width, 178), radius=18, fill='#28282a', outline='#747474')
-    d.text((pill_x + pill_width / 2 + 3, 160), 'Trusted by enterprise teams', font=small, fill='#c4c2c3', anchor='mm')
+            if company.get('wide'):
+                width = round(size * .55)
+                height = max(1, round(mark.height * width / mark.width))
+            else:
+                height = round(size * .34)
+                width = max(1, round(mark.width * height / mark.height))
+            mark = mark.resize((width, height), Image.Resampling.LANCZOS)
+        inner.alpha_composite(mark, ((inner_size - mark.width) // 2, (inner_size - mark.height) // 2))
+        mask = Image.new('L', (inner_size, inner_size))
+        ImageDraw.Draw(mask).ellipse((0, 0, inner_size - 1, inner_size - 1), fill=255)
+        inner.putalpha(mask)
+        circle.alpha_composite(inner, (4, 4))
+        overlay.alpha_composite(circle, (x + i * step, 76))
+    pill_x = x + (count - 1) * step + size - 16
+    d.rounded_rectangle((pill_x, 76, pill_x + pill_width, 118), radius=21, fill='#28282a', outline='#747474')
+    d.text((pill_x + pill_width / 2 + 3, 97), 'Trusted by enterprise teams', font=small, fill='#c4c2c3', anchor='mm')
 
     first = 'Building calm,'
     group_width = d.textlength(first, font=display) + 77
     start = (W - group_width) / 2
     avatar = Image.open(args.site_dir / 'public/assets/pixel-avatar.png').convert('RGBA')
     avatar.thumbnail((64, 88), Image.Resampling.LANCZOS)
-    overlay.alpha_composite(avatar, (int(start), 195))
-    d.text((start + 77, 236), first, font=display, fill='white', anchor='lm')
-    d.text((W / 2, 306), 'reliable intelligence', font=display, fill='white', anchor='mm')
+    overlay.alpha_composite(avatar, (int(start), 125))
+    d.text((start + 77, 166), first, font=display, fill='white', anchor='lm')
+    d.text((W / 2, 236), 'reliable intelligence', font=display, fill='white', anchor='mm')
 
     # Use the live intro wording and underline the same interactive phrases.
     segments = [(data['intro']['opening'], False)]
@@ -127,7 +128,7 @@ function read(file) {
     if line: lines.append(line)
     for row, line in enumerate(lines):
         x = (W - sum(d.textlength(word, font=body) for word, _ in line)) / 2
-        y = 384 + row * 30
+        y = 314 + row * 30
         for word, underlined in line:
             width = d.textlength(word, font=body)
             d.text((x, y), word, font=body, fill='#f5f0f8' if underlined else '#d0d0d0', anchor='lm')
@@ -135,18 +136,12 @@ function read(file) {
             x += width
     for i in range(3):
         icon = Image.open(temp / f'social-{i}.png').convert('RGBA')
-        overlay.alpha_composite(icon, (540 + i * 48, 450))
-    halo = Image.new('RGBA', (W, H))
-    ImageDraw.Draw(halo).rounded_rectangle((523, 500, 677, 546), radius=23, fill=(255, 255, 255, 90))
-    overlay = Image.alpha_composite(halo.filter(ImageFilter.GaussianBlur(15)), overlay)
-    d = ImageDraw.Draw(overlay)
-    d.rounded_rectangle((523, 500, 677, 546), radius=23, fill='white')
-    d.text((W / 2, 523), 'Get Started', font=nav, fill='black', anchor='mm')
+        overlay.alpha_composite(icon, (540 + i * 48, 385))
     stats = [(data['years'], 'Years shipping'), ('5', 'Selected systems'), ('5+', 'Enterprise orgs'), (str(data['skills']), 'Core skills')]
     for i, (value, label) in enumerate(stats):
         x = 240 + i * 240
-        d.text((x, 607), value, font=metric, fill='white', anchor='mm')
-        d.text((x, 637), label, font=small, fill='#b7b0be', anchor='mm')
+        d.text((x, 505), value, font=metric, fill='white', anchor='mm')
+        d.text((x, 535), label, font=small, fill='#b7b0be', anchor='mm')
 
     scrim = Image.new('RGBA', (W, H))
     sd = ImageDraw.Draw(scrim)
