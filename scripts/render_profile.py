@@ -1,94 +1,177 @@
-"""Render a README banner from the portfolio's actual visual assets.
+"""Render the profile banner using the website's copy, fonts, logos, and video.
 
-Requires Pillow, fonttools[woff], and imageio-ffmpeg. Run with --site-dir pointing
-at the nikeshh.com checkout; --inter-font can point at a local Inter TTF.
+Requires Pillow, fonttools[woff], imageio-ffmpeg and the site's installed Node
+packages. Pass --site-dir and --display-font (the Bubbledot TTF used by the site).
+The display font source is credited in assets/README.md.
 """
 import argparse
-from pathlib import Path
+import json
 import math
+from pathlib import Path
 import subprocess
 import tempfile
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
 from fontTools.ttLib import TTFont
 import imageio_ffmpeg
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--site-dir', required=True, type=Path)
-parser.add_argument('--inter-font', type=Path, default=Path('/System/Library/Fonts/Supplemental/Arial.ttf'))
+parser.add_argument('--display-font', required=True, type=Path)
 args = parser.parse_args()
 OUT = Path(__file__).resolve().parents[1] / 'assets'
-W, H = 1200, 600
+W, H, COUNT = 1200, 675, 60
 
 with tempfile.TemporaryDirectory() as folder:
     temp = Path(folder)
-    font = TTFont(args.site_dir / 'public/fonts/GeistPixel-Circle.woff2')
+    # Read content and rasterise vector marks directly from the website checkout.
+    data = json.loads(subprocess.check_output(['node', '-e', r'''
+const fs = require('fs'), path = require('path'), vm = require('vm');
+const site = process.argv[1], out = process.argv[2];
+const ts = require(path.join(site, 'node_modules/typescript'));
+const sharp = require(path.join(site, 'node_modules/sharp'));
+function read(file) {
+  const exports = {};
+  vm.runInNewContext(ts.transpileModule(fs.readFileSync(path.join(site, file), 'utf8'), {
+    compilerOptions: { module: ts.ModuleKind.CommonJS }
+  }).outputText, { exports });
+  return exports;
+}
+(async () => {
+  const content = read('src/content/site.ts');
+  for (const [index, company] of content.trustedBy.entries()) {
+    if (company.logo) await sharp(path.join(site, 'public', company.logo)).resize(80, 80, { fit: 'inside' }).png().toFile(path.join(out, `trust-${index}.png`));
+  }
+  const icons = fs.readFileSync(path.join(site, 'src/components/social-icons.tsx'), 'utf8');
+  const matches = [...icons.matchAll(/<svg[^>]*>([\s\S]*?)<\/svg>/g)];
+  for (const [index, match] of matches.entries()) {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#bdb8c0">${match[1]}</svg>`;
+    await sharp(Buffer.from(svg)).resize(24, 24).png().toFile(path.join(out, `social-${index}.png`));
+  }
+  console.log(JSON.stringify({ intro: content.homeIntro, trust: content.trustedBy,
+    name: content.site.name, skills: content.skills.length,
+    years: read('src/content/home-sections.ts').stats[0].value }));
+})();
+''', str(args.site_dir.resolve()), str(temp)], text=True))
+    font = TTFont(args.site_dir / 'public/fonts/InterVariable.woff2')
     font.flavor = None
-    font.save(temp / 'display.ttf')
-    display = ImageFont.truetype(str(temp / 'display.ttf'), 64)
-    brand = ImageFont.truetype(str(temp / 'display.ttf'), 26)
-    body = ImageFont.truetype(str(args.inter_font), 22)
-    small = ImageFont.truetype(str(args.inter_font), 17)
-    label = ImageFont.truetype(str(args.inter_font), 18)
+    font.save(temp / 'inter.ttf')
+    display = ImageFont.truetype(str(args.display_font), 64)
+    brand = ImageFont.truetype(str(args.display_font), 25)
+    body = ImageFont.truetype(str(temp / 'inter.ttf'), 17)
+    small = ImageFont.truetype(str(temp / 'inter.ttf'), 13)
+    nav = ImageFont.truetype(str(temp / 'inter.ttf'), 15)
+    metric = ImageFont.truetype(str(args.display_font), 26)
     subprocess.run([
         imageio_ffmpeg.get_ffmpeg_exe(), '-hide_banner', '-loglevel', 'error',
         '-i', str(args.site_dir / 'public/assets/hero-bg.mp4'),
-        '-vf', 'fps=12,scale=1200:675,crop=1200:600',
-        '-frames:v', '96', str(temp / '%03d.png'),
+        '-vf', f'fps=10,scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}',
+        '-frames:v', str(COUNT), str(temp / '%03d.png'),
     ], check=True)
-    backgrounds = [Image.open(p).convert('RGB').filter(ImageFilter.GaussianBlur(1.2)) for p in sorted(temp.glob('*.png'))]
-    overlay = Image.new('RGBA', (W,H))
+    backgrounds = [Image.open(p).convert('RGB') for p in sorted(temp.glob('[0-9]*.png'))]
+    overlay = Image.new('RGBA', (W, H))
     d = ImageDraw.Draw(overlay)
-    # Stable typography over the moving website backdrop.
-    d.text((40,30), 'Nikeshh', font=brand, fill='#ffffff')
-    d.text((1160,37), 'AI engineer / Product builder', font=small, fill='#c8c8c8', anchor='ra')
-    d.rounded_rectangle((493,108,707,148), radius=20, fill='#28282a', outline='#686868')
-    d.ellipse((512,125,518,131),fill='#d8d8d8')
-    d.text((609,127),'Intelligent systems',font=small,fill='#dedede',anchor='mm')
+    d.text((32, 42), data['name'], font=brand, fill='white', anchor='lm')
+    d.rounded_rectangle((335, 20, 865, 70), radius=25, fill='white')
+    x = 367
+    for label, width in [('Home', 85), ('Services', 110), ('About', 91), ('My Apps', 111), ('Contact', 0)]:
+        d.text((x, 45), label, font=nav, fill='#c8c8c8' if label == 'My Apps' else '#2e2e2e', anchor='lm')
+        if label == 'Home': d.ellipse((x + 19, 60, x + 22, 63), fill='#383838')
+        x += width
+    d.text((1168, 45), "Let's Talk", font=nav, fill='#d4d0d6', anchor='rm')
+
+    # Trust marks and overlapping pill match the Home panel.
+    count, size, step = len(data['trust']), 36, 26
+    pill_width = 224
+    total = (count - 1) * step + size + pill_width - 14
+    x = int((W - total) / 2)
+    for i, company in enumerate(data['trust']):
+        mark = Image.open(temp / f'trust-{i}.png').convert('RGBA')
+        circle = Image.new('RGBA', (size, size), '#28282a')
+        if company.get('cover'):
+            mark = ImageOps.fit(mark, (size - 6, size - 6), method=Image.Resampling.LANCZOS)
+        else:
+            mark.thumbnail((26 if company.get('wide') else 20, 20), Image.Resampling.LANCZOS)
+        circle.alpha_composite(mark, ((size - mark.width) // 2, (size - mark.height) // 2))
+        mask = Image.new('L', (size, size))
+        ImageDraw.Draw(mask).ellipse((0, 0, size - 1, size - 1), fill=255)
+        circle.putalpha(mask)
+        overlay.alpha_composite(circle, (x + i * step, 142))
+    pill_x = x + (count - 1) * step + size - 14
+    d.rounded_rectangle((pill_x, 142, pill_x + pill_width, 178), radius=18, fill='#28282a', outline='#747474')
+    d.text((pill_x + pill_width / 2 + 3, 160), 'Trusted by enterprise teams', font=small, fill='#c4c2c3', anchor='mm')
+
     first = 'Building calm,'
-    text_width = d.textlength(first,font=display)
-    group_width = text_width + 76
-    start = (W-group_width)/2
-    avatar = Image.open(args.site_dir/'public/assets/pixel-avatar.png').convert('RGBA')
-    avatar.thumbnail((64,88),Image.Resampling.LANCZOS)
-    overlay.alpha_composite(avatar,(int(start),178))
-    d.text((start+76,190),first,font=display,fill='#ffffff',anchor='lt')
-    d.text((W/2,292),'reliable intelligence',font=display,fill='#ffffff',anchor='mm')
-    d.text((W/2,365),'Assistants, retrieval, and agentic workflows.',font=body,fill='#d4d4d4',anchor='mm')
-    d.text((W/2,399),'Designed for people. Engineered for production.',font=body,fill='#bcbcbc',anchor='mm')
-    # Match the site's monochrome CTA, with a soft and stable halo.
-    halo=Image.new('RGBA',(W,H))
-    hd=ImageDraw.Draw(halo)
-    hd.rounded_rectangle((494,443,706,496),radius=27,fill=(255,255,255,52))
-    halo=halo.filter(ImageFilter.GaussianBlur(18))
-    overlay=Image.alpha_composite(halo,overlay)
-    d=ImageDraw.Draw(overlay)
-    d.rounded_rectangle((493,442,707,497),radius=28,fill='#141414',outline='#747474',width=1)
-    d.text((588,469),'Explore nikeshh.com',font=label,fill='#eeeeee',anchor='mm')
-    d.line((682,474,690,466),fill='#eeeeee',width=1)
-    d.line((682,466,690,466,690,474),fill='#eeeeee',width=1)
-    d.text((W/2,560),'Nikeshh Vijayabaskaran',font=small,fill='#969696',anchor='mm')
-    scrim=Image.new('RGBA',(W,H))
-    sd=ImageDraw.Draw(scrim)
+    group_width = d.textlength(first, font=display) + 77
+    start = (W - group_width) / 2
+    avatar = Image.open(args.site_dir / 'public/assets/pixel-avatar.png').convert('RGBA')
+    avatar.thumbnail((64, 88), Image.Resampling.LANCZOS)
+    overlay.alpha_composite(avatar, (int(start), 195))
+    d.text((start + 77, 236), first, font=display, fill='white', anchor='lm')
+    d.text((W / 2, 306), 'reliable intelligence', font=display, fill='white', anchor='mm')
+
+    # Use the live intro wording and underline the same interactive phrases.
+    segments = [(data['intro']['opening'], False)]
+    for item in data['intro']['highlights']:
+        segments.extend([(item['label'], True), (item['suffix'], False)])
+    lines, line, width = [], [], 0
+    for text, underlined in segments:
+        for word in text.splitlines() or ['']:
+            # Break at segment boundaries to keep each callout phrase together.
+            word_width = d.textlength(word, font=body)
+            if width + word_width > 780 and line:
+                lines.append(line)
+                line, width = [], 0
+            line.append((word, underlined))
+            width += word_width
+    if line: lines.append(line)
+    for row, line in enumerate(lines):
+        x = (W - sum(d.textlength(word, font=body) for word, _ in line)) / 2
+        y = 384 + row * 30
+        for word, underlined in line:
+            width = d.textlength(word, font=body)
+            d.text((x, y), word, font=body, fill='#f5f0f8' if underlined else '#d0d0d0', anchor='lm')
+            if underlined: d.line((x, y + 12, x + width, y + 12), fill='#9e8ba9', width=1)
+            x += width
+    for i in range(3):
+        icon = Image.open(temp / f'social-{i}.png').convert('RGBA')
+        overlay.alpha_composite(icon, (540 + i * 48, 450))
+    halo = Image.new('RGBA', (W, H))
+    ImageDraw.Draw(halo).rounded_rectangle((523, 500, 677, 546), radius=23, fill=(255, 255, 255, 90))
+    overlay = Image.alpha_composite(halo.filter(ImageFilter.GaussianBlur(15)), overlay)
+    d = ImageDraw.Draw(overlay)
+    d.rounded_rectangle((523, 500, 677, 546), radius=23, fill='white')
+    d.text((W / 2, 523), 'Get Started', font=nav, fill='black', anchor='mm')
+    stats = [(data['years'], 'Years shipping'), ('5', 'Selected systems'), ('5+', 'Enterprise orgs'), (str(data['skills']), 'Core skills')]
+    for i, (value, label) in enumerate(stats):
+        x = 240 + i * 240
+        d.text((x, 607), value, font=metric, fill='white', anchor='mm')
+        d.text((x, 637), label, font=small, fill='#b7b0be', anchor='mm')
+
+    scrim = Image.new('RGBA', (W, H))
+    sd = ImageDraw.Draw(scrim)
+    stops = [(0, .60), (.35, .20), (.70, .33), (1, .80)]
     for y in range(H):
-        opacity = int(255*(0.28+0.36*abs(y-H/2)/(H/2)))
-        sd.line((0,y,W,y),fill=(0,0,0,opacity))
-    frames=[]
-    for i in range(96):
-        # Cosine timing makes the ambient forward/backward loop seamless.
-        index=round((1-math.cos(2*math.pi*i/96))/2*(len(backgrounds)-1))
-        im=backgrounds[index].convert('RGBA')
-        im=Image.alpha_composite(im,scrim)
-        im=Image.alpha_composite(im,overlay).convert('RGB')
-        if i==0: im.save(OUT/'engineering-banner.png')
-        frames.append(im.resize((840,420),Image.Resampling.LANCZOS))
-    # Shared palette keeps the background and text consistent between frames.
-    sample=Image.new('RGB',(840,420*8))
-    for j in range(8):sample.paste(frames[j*12],(0,j*420))
-    background_palette=sample.quantize(colors=224).getpalette()[:224*3]
-    avatar_palette=avatar.convert('RGB').quantize(colors=16).getpalette()[:16*3]
-    grays=[value for i in range(16) for value in (i*17,)*3]
-    palette=Image.new('P',(1,1))
-    palette.putpalette(background_palette+avatar_palette+grays)
-    indexed=[im.quantize(palette=palette,dither=Image.Dither.NONE) for im in frames]
-    indexed[0].save(OUT/'engineering-banner.gif',save_all=True,append_images=indexed[1:],duration=80,loop=0,optimize=True,disposal=1)
-print(f"Rendered 96 frames; {(OUT/'engineering-banner.gif').stat().st_size/1024/1024:.2f} MB")
+        t = y / (H - 1)
+        for (a, av), (b, bv) in zip(stops, stops[1:]):
+            if a <= t <= b:
+                opacity = av + (bv - av) * (t - a) / (b - a)
+                break
+        sd.line((0, y, W, y), fill=(0, 0, 0, round(opacity * 255)))
+    frames = []
+    for i in range(COUNT):
+        index = round((1 - math.cos(2 * math.pi * i / COUNT)) / 2 * (len(backgrounds) - 1))
+        image = Image.alpha_composite(backgrounds[index].convert('RGBA'), scrim)
+        image = Image.alpha_composite(image, overlay).convert('RGB')
+        if i == 0: image.save(OUT / 'home-banner.png')
+        frames.append(image)
+    sample = Image.new('RGB', (W, H * 6))
+    for j in range(6): sample.paste(frames[j * COUNT // 6], (0, j * H))
+    colors = sample.quantize(colors=224).getpalette()[:224 * 3]
+    avatar_colors = avatar.convert('RGB').quantize(colors=16).getpalette()[:16 * 3]
+    grays = [value for i in range(16) for value in (i * 17,) * 3]
+    palette = Image.new('P', (1, 1))
+    palette.putpalette(colors + avatar_colors + grays)
+    indexed = [image.quantize(palette=palette, dither=Image.Dither.NONE) for image in frames]
+    indexed[0].save(OUT / 'home-banner.gif', save_all=True, append_images=indexed[1:], duration=100, loop=0, optimize=True, disposal=1)
+print(f"Rendered {COUNT} frames; {(OUT / 'home-banner.gif').stat().st_size / 1024 / 1024:.2f} MB")
