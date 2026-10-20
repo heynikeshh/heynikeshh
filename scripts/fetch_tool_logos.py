@@ -31,8 +31,35 @@ TOOLS = {
     'prometheus': 'prometheus/prometheus-original.svg',
     'grafana': 'grafana/grafana-original.svg',
     'opentelemetry': 'opentelemetry/opentelemetry-original.svg',
+    'tensorflow': 'tensorflow/tensorflow-original.svg',
+    'scikitlearn': 'scikitlearn/scikitlearn-original.svg',
+    'javascript': 'javascript/javascript-original.svg',
+    'firebase': 'firebase/firebase-original.svg',
+    'html5': 'html5/html5-original.svg',
+    'css3': 'css3/css3-original.svg',
+    'tailwindcss': 'tailwindcss/tailwindcss-original.svg',
+    'oracle': 'oracle/oracle-original.svg',
+    'dynamodb': 'dynamodb/dynamodb-original.svg',
+    'elasticsearch': 'elasticsearch/elasticsearch-original.svg',
+    'kinesis': 'amazonwebservices/amazonwebservices-original-wordmark.svg',
+    'eventhubs': 'azure/azure-original.svg',
+    'camel': 'apache/apache-original.svg',
+    'atlas': 'apache/apache-original.svg',
+    'openshift': 'redhat/redhat-original.svg',
+    'eks': 'amazonwebservices/amazonwebservices-original-wordmark.svg',
+    'ansible': 'ansible/ansible-original.svg',
+    'jaeger': 'jaegertracing/jaegertracing-original.svg',
+    'logstash': 'logstash/logstash-original.svg',
+    'kibana': 'kibana/kibana-original.svg',
+    'git': 'git/git-original.svg',
+    'github': 'github/github-original.svg',
+    'maven': 'maven/maven-original.svg',
+    'selenium': 'selenium/selenium-original.svg',
+    'jira': 'jira/jira-original.svg',
 }
 for name, path in TOOLS.items():
+    if (ROOT / 'assets/tools' / f'{name}.svg').exists():
+        continue
     data = urlopen(BASE + 'icons/' + path).read()
     assert b'<svg' in data
     # A neutral tile keeps dark brand marks readable in both GitHub themes.
