@@ -93,6 +93,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **After-hours enquiries go unanswered:** Recover opportunities outside office hours without staffing every routine enquiry overnight.
 - **Interested callers never hear back:** Reduce manual callback work and give existing leads another chance to become customers.
 - **No-shows leave empty appointments:** Reduce time spent chasing confirmations and make cancelled slots available sooner.
+- **Busy periods leave callers waiting:** Reduce reception interruptions and give callers a useful response when staff are occupied.
+- **Calls reach the wrong person:** Reduce transfer time and repeated questioning so staff can begin the useful part of the conversation sooner.
 
 ### 02 / Give good enquiries a clear next step.
 
@@ -111,6 +113,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Enquiries disappear between channels:** Reduce lost leads and the hours spent searching inboxes for customer context.
 - **Sales time goes to poor-fit leads:** Spend less time screening and more time on conversations that fit your offer.
 - **Too much back-and-forth to book:** Reduce scheduling admin and friction between a new lead and a sales conversation.
+- **Duplicate enquiries create duplicate work:** Reduce repeated screening and conflicting outreach while keeping customer context together.
+- **New leads wait for an owner:** Reduce unattended leads and the coordination effort required to start a sales conversation.
 
 ### 03 / Keep promising deals moving.
 
@@ -129,6 +133,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Customer records are incomplete:** Reduce duplicate data entry and time spent reconstructing each sales conversation.
 - **Quotes go out, then go quiet:** Make more of proposals already prepared without adding a manual chasing routine.
 - **Handoffs lose sales context:** Reduce repeated discovery work and prevent avoidable delays in active opportunities.
+- **Renewals and repeat orders get missed:** Make better use of existing relationships and reduce the manual effort of tracking repeat business.
+- **Inactive deals distort the pipeline:** Reduce time spent cleaning records and planning around opportunities that no longer reflect customer interest.
 
 ### 04 / Stay in touch without the manual effort.
 
@@ -147,6 +153,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Campaigns take too long to launch:** Reduce repetitive production work and leave more time for messaging and creative decisions.
 - **Every lead gets the same message:** Make better use of existing leads and reduce time spent manually sorting campaign lists.
 - **Warm contacts are forgotten:** Explore demand in an audience you already have before paying to acquire more contacts.
+- **Content gets stuck in review:** Reduce repeated revisions and coordination work while keeping people in control of publication.
+- **Abandoned baskets receive no useful follow-up:** Explore existing purchase intent before spending to attract a new audience.
 
 ### 05 / Help customers without growing the queue.
 
@@ -165,6 +173,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **The same questions fill the inbox:** Reduce repeated ticket work and preserve team capacity for more complex customer needs.
 - **Customers repeat themselves at handoff:** Reduce repeated questioning and shorten the time needed to begin useful support.
 - **Urgent requests wait in the wrong queue:** Reduce manual triage work and avoid preventable delays for important customer issues.
+- **Order and return questions overwhelm staff:** Reduce routine handling effort and give customers a clearer next step after a purchase.
+- **Repeated complaints never become improvements:** Reduce manual feedback analysis and make recurring service problems easier to prioritise.
 
 ### 06 / Keep invoices moving and admin down.
 
@@ -183,6 +193,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Invoices require repeated data entry:** Reduce entry time and corrections while keeping people responsible for approvals.
 - **Overdue invoices are hard to track:** Reduce chasing effort and make overdue balances visible before they are forgotten.
 - **Month-end means hunting for records:** Reduce time spent finding evidence and repeating preparation work during close.
+- **Duplicate invoices are hard to spot:** Reduce repeated processing and help staff investigate possible duplicate payments before they happen.
+- **Expense submissions need repeated correction:** Reduce correction cycles and the time employees and finance staff spend chasing each other.
 
 ### 07 / Give your team time back.
 
@@ -201,6 +213,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Staff copy information between apps:** Reduce paid hours spent on data transfer and the rework caused by inconsistent records.
 - **Approvals get lost in messages:** Reduce time spent chasing decisions and waiting for routine work to progress.
 - **Routine reminders take manual effort:** Reduce coordination time and the cost of preventable missed steps.
+- **Failed automations go unnoticed:** Reduce the time failures remain hidden and the effort needed to reconstruct missing work.
+- **Recurring reports require the same clicks:** Reduce repeated preparation work and give teams a more consistent reporting routine.
 
 ### 08 / Move work from request to delivery sooner.
 
@@ -219,6 +233,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **New customers wait to get started:** Reduce repeated requests and move customers into delivery with less coordination effort.
 - **Requests have no clear owner:** Reduce stalled work and staff time spent finding where a request belongs.
 - **Documents need repeated checking:** Reduce repeated reviews and avoid moving incomplete work further into the process.
+- **Exceptions stop the entire process:** Reduce stalled requests and the investigation needed to restart them.
+- **Deadlines are discovered after they pass:** Reduce manual status checking and give teams time to address preventable delays.
 
 ### 09 / Make more room for your people.
 
@@ -237,6 +253,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **New starter tasks fall through gaps:** Reduce chasing and preventable waiting so new employees can get started sooner.
 - **Policy questions interrupt HR:** Reduce interruptions while preserving human judgement for personal or sensitive matters.
 - **Leave requests need too much coordination:** Reduce manual tracking and repeated status questions from employees and managers.
+- **Interview scheduling takes too much chasing:** Reduce recruitment coordination work and keep candidates informed about their next appointment.
+- **Offboarding steps are easy to miss:** Reduce chasing effort and make incomplete offboarding actions visible sooner.
 
 ### 10 / Spend less time coordinating each job.
 
@@ -255,6 +273,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Customers keep asking when you will arrive:** Reduce coordination calls and give staff more time to organise delivery.
 - **Job notes arrive late or incomplete:** Reduce repeated questions and the delay between completed work and administration.
 - **Follow-up visits are easily forgotten:** Reduce manual reminders and give customers a clearer route to their next service.
+- **Visit changes do not reach everyone:** Reduce avoidable travel, missed visits, and the calls needed to correct outdated information.
+- **Teams arrive without the job requirements:** Reduce preventable return trips and time spent discovering missing information on site.
 
 ### 11 / Put effort where it can pay off.
 
@@ -273,6 +293,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Reports take hours to assemble:** Reduce reporting labour and give teams more time to act on what the numbers show.
 - **Automation ideas lack a clear payoff:** Reduce wasted implementation effort and make the cost of a change easier to evaluate.
 - **Bottlenecks are noticed too late:** Reduce time spent investigating old issues and target improvements at recurring delays.
+- **Teams disagree on the current numbers:** Reduce reconciliation debates and the time spent rebuilding confidence in routine figures.
+- **Rising operating costs are noticed late:** Reduce manual cost investigation and identify waste before it becomes a repeated expense.
 
 ### 12 / Help the right customers discover you.
 
@@ -291,6 +313,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Your services are hard to discover:** Make better use of existing content and remove preventable discovery friction.
 - **AI search cannot clearly interpret your content:** Build more useful discovery-ready content for buyers while making visibility gaps easier to track.
 - **Visits reach the wrong page:** Reduce avoidable drop-off and make existing search traffic more useful to the business.
+- **Local business information is inconsistent:** Reduce confusion and help relevant local visitors find the right contact or service information.
+- **Useful content becomes outdated:** Make better use of content you already own and reduce avoidable pre-sale questions.
 
 ### 13 / Make more of the traffic you already have.
 
@@ -309,6 +333,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Paid visits do not turn into enquiries:** Make better use of current traffic before increasing acquisition spend.
 - **Too much budget stays in weak channels:** Identify where spending produces weak demand and focus experiments more deliberately.
 - **The same growth tests get repeated:** Reduce repeated work and make each test more useful to the next decision.
+- **Visitors abandon long enquiry forms:** Reduce wasted visits and learn which changes turn existing interest into usable enquiries.
+- **Enquiries cannot be connected to sales:** Reduce guesswork in budget decisions and focus experiments on useful customer demand.
 
 ### 14 / Find problems before they become costly.
 
@@ -327,6 +353,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Wrong answers reach customers:** Reduce repeated correction work and prioritise the errors that matter most.
 - **Failures cannot be traced:** Reduce investigation time and avoid fixing symptoms without understanding the cause.
 - **AI changes introduce new problems:** Reduce preventable rollback and rework by catching recurring failures earlier.
+- **Sensitive information appears in answers:** Reduce repeated remediation work and make high-impact information handling problems easier to identify.
+- **Tools take actions outside the intended scope:** Reduce unexpected actions and prioritise missing controls before expanding a workflow.
 
 ### 15 / Scale AI with clear ownership and oversight.
 
@@ -345,6 +373,8 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 - **Sensitive actions lack approval:** Reduce uncontrolled changes and make responsibility for approvals clear.
 - **Review evidence takes days to gather:** Reduce preparation effort and make gaps visible before a review deadline.
 - **Nobody clearly owns the AI workflow:** Reduce delayed decisions and confusion when a workflow needs attention.
+- **Old access remains after responsibilities change:** Reduce manual access review work and make unnecessary permissions easier to address.
+- **AI tools have no shared inventory:** Reduce discovery work during reviews and make unmanaged AI use easier to bring under oversight.
 
 </details>
 
