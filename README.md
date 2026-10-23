@@ -53,25 +53,210 @@ AI audits, traceability, access controls, compliance evidence, and clear ownersh
 
 ## Services
 
-End-to-end AI products and automation for your business, with growth, search visibility, auditability, and governance built in.
+Where are you losing time, money, or opportunities? Choose an outcome to see how AI can help and what to measure.
 
-| | Service | What it includes |
+| Business outcome | AI solution | Value to your business |
 | :--- | :--- | :--- |
-| **01** | **AI receptionists & voice agents** | Call answering & routing · Calendar bookings & reminders · Human handoff & call summaries |
-| **02** | **Lead generation & qualification** | Website enquiry capture · Qualification questions · Meeting booking & lead routing |
-| **03** | **Sales & CRM automation** | Customer record updates · Follow-up sequences · Pipeline alerts & sales handoffs |
-| **04** | **Marketing automation** | Content & campaign drafts · Customer nurture journeys · Audience segmentation & review |
-| **05** | **Chatbots & customer support** | Knowledge-grounded answers · Ticket routing & escalation · Aftercare & customer check-ins |
-| **06** | **Financial automation** | Invoice & receipt capture · Payment reminders · Reconciliation preparation |
-| **07** | **Workflow automation** | App integrations & data entry · Scheduling & notifications · Approvals & exception handling |
-| **08** | **Business process automation** | Customer onboarding · Document & request processing · Department handoffs & tracking |
-| **09** | **HR automation** | Employee onboarding checklists · Policy & internal knowledge assistants · Leave requests & HR reminders |
-| **10** | **Job & field operations** | Job scheduling & dispatch support · Visit updates & work summaries · Aftercare follow-ups |
-| **11** | **Reporting & AI advisory** | Automation assessment & tool selection · Operational dashboards & reports · Evaluation, monitoring & improvement |
-| **12** | **SEO & AIO** | Technical SEO & structured data · AI search & content optimisation · Search visibility & discovery reporting |
-| **13** | **Growth hacking & traffic** | Acquisition & traffic experiments · Landing page & conversion testing · Funnel analytics & growth reporting |
-| **14** | **AI auditing & assurance** | Model, prompt & workflow reviews · Quality, safety & failure-mode evaluations · Traceability & audit trails |
-| **15** | **Compliance & AI governance** | Data handling & access controls · Human oversight & approval workflows · Policy documentation & compliance evidence |
+| **Recover missed calls** | AI receptionists & voice agents | Protect the enquiries you already paid to attract. Spend less staff time on routine calls and chasing callers back. |
+| **Capture better leads** | Lead generation & qualification | Make more of the demand you generate. Reduce manual screening so your team can focus on promising conversations. |
+| **Follow up before deals go cold** | Sales & CRM automation | Reduce the admin cost of each sale and give existing opportunities more consistent attention, without adding manual chasing. |
+| **Get more from your marketing** | Marketing automation | Spend less time assembling campaigns. Reuse customer context to make follow-up more relevant and get more from your existing audience. |
+| **Resolve support faster** | Chatbots & customer support | Reduce repeat ticket handling and free your team for higher-value conversations. Give customers a faster route to help. |
+| **Get paid with less chasing** | Financial automation | Reduce data-entry and correction time. Help your team follow up on outstanding invoices sooner and see what still needs attention. |
+| **Cut repetitive admin** | Workflow automation | Lower the labour cost of repeat tasks and reduce copy-and-paste errors. Let your team handle more work without more administration. |
+| **Speed up customer handoffs** | Business process automation | Reduce waiting and repeated work. Start delivery sooner and spend fewer staff hours finding out where a request got stuck. |
+| **Reduce HR admin** | HR automation | Reduce repeated coordination and interruptions. Help new starters become productive sooner with fewer missed steps. |
+| **Keep field jobs on track** | Job & field operations | Cut coordination calls and preventable trips. Give teams clearer schedules and customers useful updates without manual chasing. |
+| **Find costly bottlenecks** | Reporting & AI advisory | Reduce reporting effort and spot wasted time. Prioritise changes you can measure before committing to a wider rollout. |
+| **Get found in search & AI** | SEO & AIO | Build more routes to relevant enquiries from content you own. Identify visibility gaps and reduce avoidable friction before a customer contacts you. |
+| **Turn more visits into enquiries** | Growth hacking & traffic | Find where prospects drop off and stop repeating weak experiments. Improve how efficiently your acquisition spend produces qualified demand. |
+| **Catch AI failures early** | AI auditing & assurance | Reduce time spent diagnosing repeated problems. Focus fixes on the failures that matter to customers and operating costs. |
+| **Keep AI under control** | Compliance & AI governance | Reduce the effort of reviews and evidence gathering. Make decisions easier to trace and keep sensitive actions under appropriate oversight. |
+
+<details>
+<summary>Explore the problems, workflows, and success measures</summary>
+
+### 01 / Turn missed calls into booked appointments.
+
+**AI receptionists & voice agents**
+
+**The problem:** An unanswered call can send a ready-to-buy customer to someone else. Slow callbacks make that opportunity harder to recover.
+
+**The solution:** Voice agents answer enquiries, book appointments, and follow up on missed calls, with a handoff to your team when needed.
+
+**Includes:** Call answering & routing · Calendar bookings & reminders · Missed-call follow-up & human handoff
+
+**What we measure:** Missed calls recovered · Appointments booked · Call-handling time
+
+### 02 / Give good enquiries a clear next step.
+
+**Lead generation & qualification**
+
+**The problem:** Unanswered enquiries waste your acquisition spend. Unqualified leads take sales time away from people who are ready to buy.
+
+**The solution:** Capture website enquiries, ask qualification questions, and route suitable prospects to the right person or booking calendar.
+
+**Includes:** Website enquiry capture · Qualification questions · Meeting booking & lead routing
+
+**What we measure:** Qualified enquiries · Response time · Meetings booked
+
+### 03 / Keep promising deals moving.
+
+**Sales & CRM automation**
+
+**The problem:** Forgotten follow-ups and scattered customer records let interested buyers go quiet while your team updates spreadsheets.
+
+**The solution:** Connect customer records, timely follow-up sequences, and pipeline alerts so every opportunity has an owner and a next step.
+
+**Includes:** Customer record updates · Follow-up sequences · Pipeline alerts & sales handoffs
+
+**What we measure:** Follow-up coverage · Sales admin time · Lead-to-sale conversion
+
+### 04 / Stay in touch without the manual effort.
+
+**Marketing automation**
+
+**The problem:** Disconnected campaigns and one-off outreach leave paid-for leads without a useful next message.
+
+**The solution:** Connect campaign drafts, audience segments, and nurture journeys, with your team reviewing content before it goes out.
+
+**Includes:** Content & campaign drafts · Customer nurture journeys · Audience segmentation & review
+
+**What we measure:** Campaign production time · Qualified responses · Cost per enquiry
+
+### 05 / Help customers without growing the queue.
+
+**Chatbots & customer support**
+
+**The problem:** Repeated questions consume support hours. Long waits frustrate customers and delay the requests that need a person.
+
+**The solution:** Answer routine questions from your knowledge base and route complex or uncertain requests to the right team with context.
+
+**Includes:** Knowledge-grounded answers · Ticket routing & escalation · Aftercare & customer check-ins
+
+**What we measure:** Resolution time · Repeat tickets · Cost per resolved request
+
+### 06 / Keep invoices moving and admin down.
+
+**Financial automation**
+
+**The problem:** Manual invoice entry, missing documents, and late reminders create rework and delay collections.
+
+**The solution:** Capture invoices and receipts, prepare reconciliation records, and send payment reminders through defined approval steps.
+
+**Includes:** Invoice & receipt capture · Payment reminders · Reconciliation preparation
+
+**What we measure:** Invoice processing time · Overdue balances · Manual corrections
+
+### 07 / Give your team time back.
+
+**Workflow automation**
+
+**The problem:** Copying data between apps and sending routine reminders uses paid hours without moving the business forward.
+
+**The solution:** Connect your existing tools to move information, trigger tasks, and handle reminders, with approvals for important decisions.
+
+**Includes:** App integrations & data entry · Scheduling & notifications · Approvals & exception handling
+
+**What we measure:** Hours spent on repeat tasks · Manual touches · Rework
+
+### 08 / Move work from request to delivery sooner.
+
+**Business process automation**
+
+**The problem:** Requests stall between departments when documents, next steps, or ownership are unclear.
+
+**The solution:** Connect onboarding, document processing, and department handoffs into a trackable process with clear owners.
+
+**Includes:** Customer onboarding · Document & request processing · Department handoffs & tracking
+
+**What we measure:** Request-to-delivery time · Handoff delays · Rework hours
+
+### 09 / Make more room for your people.
+
+**HR automation**
+
+**The problem:** Chasing onboarding tasks and answering the same policy questions takes time from employees, managers, and HR.
+
+**The solution:** Coordinate onboarding checklists, policy answers, leave requests, and reminders, with people handling sensitive decisions.
+
+**Includes:** Employee onboarding checklists · Policy & internal knowledge assistants · Leave requests & HR reminders
+
+**What we measure:** Onboarding admin hours · Completion time · Repeated HR queries
+
+### 10 / Spend less time coordinating each job.
+
+**Job & field operations**
+
+**The problem:** Missed updates and scheduling gaps create avoidable calls, idle time, and repeat visits.
+
+**The solution:** Connect job scheduling, dispatch updates, work summaries, and customer notifications across office and field teams.
+
+**Includes:** Job scheduling & dispatch support · Visit updates & work summaries · Aftercare follow-ups
+
+**What we measure:** Coordination time · Repeat visits · Jobs completed on schedule
+
+### 11 / Put effort where it can pay off.
+
+**Reporting & AI advisory**
+
+**The problem:** Manual reporting hides delays, while poorly chosen automation projects consume budget without solving a useful problem.
+
+**The solution:** Assess workflows, choose practical starting points, and connect operational reporting to a clear baseline and review process.
+
+**Includes:** Automation assessment & tool selection · Operational dashboards & reports · Evaluation, monitoring & improvement
+
+**What we measure:** Reporting hours · Process delays · Cost per completed workflow
+
+### 12 / Help the right customers discover you.
+
+**SEO & AIO**
+
+**The problem:** If your services are hard to find or understand online, potential buyers may never reach you, even when you have the right offer.
+
+**The solution:** Improve technical SEO, structured data, and answer-ready content for search engines and AI-assisted discovery.
+
+**Includes:** Technical SEO & structured data · AI search & content optimisation · Search visibility & discovery reporting
+
+**What we measure:** Relevant search visits · Qualified organic enquiries · Discovery visibility
+
+### 13 / Make more of the traffic you already have.
+
+**Growth hacking & traffic**
+
+**The problem:** Paying for visits that do not become enquiries drains your marketing budget and makes growth more expensive.
+
+**The solution:** Test acquisition channels, landing pages, and conversion journeys, then connect the results to your sales funnel.
+
+**Includes:** Acquisition & traffic experiments · Landing page & conversion testing · Funnel analytics & growth reporting
+
+**What we measure:** Visitor-to-enquiry conversion · Cost per qualified lead · Acquisition cost
+
+### 14 / Find problems before they become costly.
+
+**AI auditing & assurance**
+
+**The problem:** Incorrect AI answers and hidden workflow failures create rework, unnecessary escalations, and lost customer confidence.
+
+**The solution:** Review models, prompts, and workflows with evaluations and traceable records so your team can identify and prioritise failures.
+
+**Includes:** Model, prompt & workflow reviews · Quality, safety & failure-mode evaluations · Traceability & audit trails
+
+**What we measure:** Failure rate · Rework time · Time to identify and resolve issues
+
+### 15 / Scale AI with clear ownership and oversight.
+
+**Compliance & AI governance**
+
+**The problem:** Unclear permissions, missing records, and unreviewed automation make changes harder to approve and incidents harder to investigate.
+
+**The solution:** Build access controls, human approvals, policy documentation, and compliance evidence into AI workflows.
+
+**Includes:** Data handling & access controls · Human oversight & approval workflows · Policy documentation & compliance evidence
+
+**What we measure:** Review preparation time · Control gaps · Traceability of decisions
+
+</details>
 
 <details>
 <summary><strong>Built with <em>intention.</em> A letter from Nikeshh</strong></summary>
