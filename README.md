@@ -88,6 +88,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 
 **What we measure:** Missed calls recovered · Appointments booked · Call-handling time
 
+**More problems we can solve:**
+
+- **After-hours enquiries go unanswered:** Recover opportunities outside office hours without staffing every routine enquiry overnight.
+- **Interested callers never hear back:** Reduce manual callback work and give existing leads another chance to become customers.
+- **No-shows leave empty appointments:** Reduce time spent chasing confirmations and make cancelled slots available sooner.
+
 ### 02 / Give good enquiries a clear next step.
 
 **Lead generation & qualification**
@@ -99,6 +105,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 **Includes:** Website enquiry capture · Qualification questions · Meeting booking & lead routing
 
 **What we measure:** Qualified enquiries · Response time · Meetings booked
+
+**More problems we can solve:**
+
+- **Enquiries disappear between channels:** Reduce lost leads and the hours spent searching inboxes for customer context.
+- **Sales time goes to poor-fit leads:** Spend less time screening and more time on conversations that fit your offer.
+- **Too much back-and-forth to book:** Reduce scheduling admin and friction between a new lead and a sales conversation.
 
 ### 03 / Keep promising deals moving.
 
@@ -112,6 +124,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 
 **What we measure:** Follow-up coverage · Sales admin time · Lead-to-sale conversion
 
+**More problems we can solve:**
+
+- **Customer records are incomplete:** Reduce duplicate data entry and time spent reconstructing each sales conversation.
+- **Quotes go out, then go quiet:** Make more of proposals already prepared without adding a manual chasing routine.
+- **Handoffs lose sales context:** Reduce repeated discovery work and prevent avoidable delays in active opportunities.
+
 ### 04 / Stay in touch without the manual effort.
 
 **Marketing automation**
@@ -123,6 +141,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 **Includes:** Content & campaign drafts · Customer nurture journeys · Audience segmentation & review
 
 **What we measure:** Campaign production time · Qualified responses · Cost per enquiry
+
+**More problems we can solve:**
+
+- **Campaigns take too long to launch:** Reduce repetitive production work and leave more time for messaging and creative decisions.
+- **Every lead gets the same message:** Make better use of existing leads and reduce time spent manually sorting campaign lists.
+- **Warm contacts are forgotten:** Explore demand in an audience you already have before paying to acquire more contacts.
 
 ### 05 / Help customers without growing the queue.
 
@@ -136,6 +160,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 
 **What we measure:** Resolution time · Repeat tickets · Cost per resolved request
 
+**More problems we can solve:**
+
+- **The same questions fill the inbox:** Reduce repeated ticket work and preserve team capacity for more complex customer needs.
+- **Customers repeat themselves at handoff:** Reduce repeated questioning and shorten the time needed to begin useful support.
+- **Urgent requests wait in the wrong queue:** Reduce manual triage work and avoid preventable delays for important customer issues.
+
 ### 06 / Keep invoices moving and admin down.
 
 **Financial automation**
@@ -147,6 +177,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 **Includes:** Invoice & receipt capture · Payment reminders · Reconciliation preparation
 
 **What we measure:** Invoice processing time · Overdue balances · Manual corrections
+
+**More problems we can solve:**
+
+- **Invoices require repeated data entry:** Reduce entry time and corrections while keeping people responsible for approvals.
+- **Overdue invoices are hard to track:** Reduce chasing effort and make overdue balances visible before they are forgotten.
+- **Month-end means hunting for records:** Reduce time spent finding evidence and repeating preparation work during close.
 
 ### 07 / Give your team time back.
 
@@ -160,6 +196,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 
 **What we measure:** Hours spent on repeat tasks · Manual touches · Rework
 
+**More problems we can solve:**
+
+- **Staff copy information between apps:** Reduce paid hours spent on data transfer and the rework caused by inconsistent records.
+- **Approvals get lost in messages:** Reduce time spent chasing decisions and waiting for routine work to progress.
+- **Routine reminders take manual effort:** Reduce coordination time and the cost of preventable missed steps.
+
 ### 08 / Move work from request to delivery sooner.
 
 **Business process automation**
@@ -171,6 +213,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 **Includes:** Customer onboarding · Document & request processing · Department handoffs & tracking
 
 **What we measure:** Request-to-delivery time · Handoff delays · Rework hours
+
+**More problems we can solve:**
+
+- **New customers wait to get started:** Reduce repeated requests and move customers into delivery with less coordination effort.
+- **Requests have no clear owner:** Reduce stalled work and staff time spent finding where a request belongs.
+- **Documents need repeated checking:** Reduce repeated reviews and avoid moving incomplete work further into the process.
 
 ### 09 / Make more room for your people.
 
@@ -184,6 +232,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 
 **What we measure:** Onboarding admin hours · Completion time · Repeated HR queries
 
+**More problems we can solve:**
+
+- **New starter tasks fall through gaps:** Reduce chasing and preventable waiting so new employees can get started sooner.
+- **Policy questions interrupt HR:** Reduce interruptions while preserving human judgement for personal or sensitive matters.
+- **Leave requests need too much coordination:** Reduce manual tracking and repeated status questions from employees and managers.
+
 ### 10 / Spend less time coordinating each job.
 
 **Job & field operations**
@@ -195,6 +249,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 **Includes:** Job scheduling & dispatch support · Visit updates & work summaries · Aftercare follow-ups
 
 **What we measure:** Coordination time · Repeat visits · Jobs completed on schedule
+
+**More problems we can solve:**
+
+- **Customers keep asking when you will arrive:** Reduce coordination calls and give staff more time to organise delivery.
+- **Job notes arrive late or incomplete:** Reduce repeated questions and the delay between completed work and administration.
+- **Follow-up visits are easily forgotten:** Reduce manual reminders and give customers a clearer route to their next service.
 
 ### 11 / Put effort where it can pay off.
 
@@ -208,6 +268,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 
 **What we measure:** Reporting hours · Process delays · Cost per completed workflow
 
+**More problems we can solve:**
+
+- **Reports take hours to assemble:** Reduce reporting labour and give teams more time to act on what the numbers show.
+- **Automation ideas lack a clear payoff:** Reduce wasted implementation effort and make the cost of a change easier to evaluate.
+- **Bottlenecks are noticed too late:** Reduce time spent investigating old issues and target improvements at recurring delays.
+
 ### 12 / Help the right customers discover you.
 
 **SEO & AIO**
@@ -219,6 +285,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 **Includes:** Technical SEO & structured data · AI search & content optimisation · Search visibility & discovery reporting
 
 **What we measure:** Relevant search visits · Qualified organic enquiries · Discovery visibility
+
+**More problems we can solve:**
+
+- **Your services are hard to discover:** Make better use of existing content and remove preventable discovery friction.
+- **AI search cannot clearly interpret your content:** Build more useful discovery-ready content for buyers while making visibility gaps easier to track.
+- **Visits reach the wrong page:** Reduce avoidable drop-off and make existing search traffic more useful to the business.
 
 ### 13 / Make more of the traffic you already have.
 
@@ -232,6 +304,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 
 **What we measure:** Visitor-to-enquiry conversion · Cost per qualified lead · Acquisition cost
 
+**More problems we can solve:**
+
+- **Paid visits do not turn into enquiries:** Make better use of current traffic before increasing acquisition spend.
+- **Too much budget stays in weak channels:** Identify where spending produces weak demand and focus experiments more deliberately.
+- **The same growth tests get repeated:** Reduce repeated work and make each test more useful to the next decision.
+
 ### 14 / Find problems before they become costly.
 
 **AI auditing & assurance**
@@ -244,6 +322,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 
 **What we measure:** Failure rate · Rework time · Time to identify and resolve issues
 
+**More problems we can solve:**
+
+- **Wrong answers reach customers:** Reduce repeated correction work and prioritise the errors that matter most.
+- **Failures cannot be traced:** Reduce investigation time and avoid fixing symptoms without understanding the cause.
+- **AI changes introduce new problems:** Reduce preventable rollback and rework by catching recurring failures earlier.
+
 ### 15 / Scale AI with clear ownership and oversight.
 
 **Compliance & AI governance**
@@ -255,6 +339,12 @@ Where are you losing time, money, or opportunities? Choose an outcome to see how
 **Includes:** Data handling & access controls · Human oversight & approval workflows · Policy documentation & compliance evidence
 
 **What we measure:** Review preparation time · Control gaps · Traceability of decisions
+
+**More problems we can solve:**
+
+- **Sensitive actions lack approval:** Reduce uncontrolled changes and make responsibility for approvals clear.
+- **Review evidence takes days to gather:** Reduce preparation effort and make gaps visible before a review deadline.
+- **Nobody clearly owns the AI workflow:** Reduce delayed decisions and confusion when a workflow needs attention.
 
 </details>
 
